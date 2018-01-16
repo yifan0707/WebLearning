@@ -1,0 +1,23 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>This is a test index page</title>
+		<script type="text/javascript">
+			function substitue(){
+				var myValue = document.getElementById('myTextBox').value;
+
+				if(myValue.length==0){
+					alert("Please enter a real value in the test box!");
+					return;
+				}
+				var myTitle=document.getElementById('title');
+				myTitle.innerHTML=myValue;
+			}
+		</script>
+	</head>
+	<body>
+		<h1 id="title">JavaScript Example</h1>
+		<input type="text" id="myTextBox" />
+		<input type="submit" value="click me" onclick="substitue()" />
+	</body>
+</html>
