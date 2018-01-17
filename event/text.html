@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Events in JavaScript</title>
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript">
+		console.log("script connected");
+
+		var navStatus=true;
+		function testFunction(){
+			if(navStatus){
+				document.getElementById("closenav").style.left = "-300px";
+				navStatus=false;
+			}else{
+				document.getElementById("closenav").style.left = "0px";
+				navStatus=true;
+			}
+		}
+
+		//-----------------------------------------------
+		//object with various properties
+		var person={
+			firstname:"Alvin", 
+			lastname:"Lu",
+			age:25,
+			haircolor:"Black",
+		};
+		document.write(person.firstname);
+		document.write(person.age);
+		document.write(person.firstname+" "+person.lastname);
+		//-----------------------------------------------
+		var person2={
+			firstname:"Alvin", 
+			lastname:"Lu",
+			age:25,
+			haircolor:"Black",
+			//creating a function that called fullname inside the object
+			//using this to repersent the object itself.
+			fullname:function(){
+				document.write("First: "+this.firstname+" "+this.lastname+"\n");
+			},
+			fullname2:function(){
+				return "Second: "+this.firstname+" "+this.lastname+"\n";
+			},
+			fullname3:function(){
+				return "<p>"+this.firstname+" "+this.lastname+"</p>";
+			}
+		};
+		person2.fullname();
+		document.write(person2.fullname2());
+		document.write(person2.fullname3());
+	</script>
+</head>
+<body>
+	<nav id="closenav">
+		<!--On mouse down runs when mouse click it,
+			On mouse over runs when mouse hover it,
+			On mouse enter&leave when mouse enter or leave it.!-->
+		<!-- onclick works the same as on mouse down so far!-->
+		<div onclick="testFunction()"></div>
+
+	</nav>
+
+</body>
+</html>
