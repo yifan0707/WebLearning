@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Conditional</title>
+	</head>
+	<body>
+		<p id="test"></p>
+		<script type="text/javascript">
+			var day;
+
+			switch(new Date().getDay()){
+				case 1: 
+					day="Monday";
+					break;
+				case 2:
+					day="Tuesday";
+					break;
+				case 3:
+					day="Wednesday";
+					break;
+				case 4:
+					day="Thursday";
+					break;
+				case 5:
+					day="Firday";
+					break;
+				case 6:
+					day="Saturday";
+					break;
+				case 0:
+					day="Sunday";	
+			}
+
+			document.getElementById("test").innerHTML="It is "+day;
+		</script>
+	</body>
+</html>

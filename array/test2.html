@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>change data in the array</title>
+</head>
+<body>
+	<p id="test"></p>
+	<p id="test2"></p>
+	<p id="test3"></p>
+	<p id="test4"></p>
+	<p id="test5"></p>
+
+	<script type="text/javascript">
+		//creating an array 
+		var names=["Alvin","John","Jane"];
+		//pop the last element and return the element 
+		var x = names.pop();
+		document.getElementById("test").innerHTML=x+" "+names[2];
+
+		//push method would actually return the length of the array list after inserted.
+		var y = names.push("Frida");
+		document.getElementById("test2").innerHTML=y+" "+names[2];
+
+		//removing the first element of the array and return the item that just removed
+		var z= names.shift();
+		document.getElementById("test3").innerHTML=z+" "+names;
+
+		//adding an element at the beginning of the array using unshit(). The method return the size of the list after inserted.
+		var m=names.unshift(z);
+		document.getElementById("test4").innerHTML=m+" "+names;
+
+		//splice(index,numberOfItemToRemove,newInsertion);
+		//the first element indicates the index that the pointer would point at.
+		//the second element indicates number of elements that would be removed.
+		//the following element represent the element that would be inserted in the array.
+		var n=names.splice(1,0,"FirstNewInsertion","SecondNewInsertion");
+		document.getElementById("test5").innerHTML=n+" "+names;
+
+
+
+
+	</script>
+</body>
+</html>

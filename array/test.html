@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<p id="test"></p>
+		<p id="test2"></p>
+		<script type="text/javascript">
+			var name1="Alvin";
+			var name2="John";
+			var name3="Jane";
+
+			var names=["Alvin","John","Jane"];
+			
+			document.getElementById("test").innerHTML=names[0];
+
+			//this is an object
+			var person={firstName:"Yifan", lastName:"Nielsen", age:25};
+			document.getElementById("test2").innerHTML=person.age;
+			//object can be treat as an array and use it as below.
+			//document.getElementById("test2").innerHTML=person["age"];
+
+			//var names2=new Array();
+			//var names2=Array("Alvin","John","Jane");
+			//document.writeln(names2[0]);
+		</script>
+	</body>
+</html>

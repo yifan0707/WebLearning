@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Primitive types and methods</title>
+</head>
+<body>
+	<p id="mathbox">0</p>
+
+	<!-- The script part must put behind the html part otherwise problem will occurs. Alternatively, using 'onload' key word to call out the function when using.-->
+	<script type="text/javascript">
+		//number methods 
+		var x=9.982;
+		//the number x will round up with 0 digits behind the dot
+		x.toFixed(0);
+		(100+23).valueOf();
+
+		//Math object
+		Math.random();
+		Math.round(9.6);
+
+		//will round up to 5
+		Math.ceil(4.4);
+
+		//will round up to 4
+		Math.floor(4.7);
+
+		//8*8
+		Math.pow(8,2);
+
+		//sqrt root of 64
+		Math.sqrt(64);
+
+		//number of PI. No perantheis!
+		Math.PI;
+
+		document.getElementById("mathbox").innerHTML = Math.pow(8,2);
+	</script>
+</body>
+</html>

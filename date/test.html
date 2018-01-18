@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Date Formate</title>
+	</head>
+	<body>
+		<p id="test"></p>
+		<p id="test2"></p>
+		<p id="test3"></p>
+		
+
+		<p id="testA"></p>
+		</br>
+		<p id="testB"></p>
+
+		<script type="text/javascript">
+			var date=new Date(1000);
+			var date2=new Date("2017-01-01");
+			//var date2=new Date("05/12/2015");
+			//--------------------month/day/year
+
+			//var date2 =new Date("Mar 15 2015");
+			//var date2 =new Date("15 Mar 2015");
+
+			//---------------------however, the current month is month+1
+			//----------------year,month,day,hour,minute,second,mili-sec   
+			var date3=new Date(96, 1,    1, 12,  23,    23,    32);
+
+			document.getElementById("test").innerHTML=date3;
+			document.getElementById("test2").innerHTML=date3.toUTCString();
+			document.getElementById("test3").innerHTML=date3.toDateString();
+			//-------------------------------------------------------------
+			//Date methods
+			var getDate=new Date();
+			document.getElementById("testA").innerHTML="The date is "+getDate.getDate()+"/"+getDate.getMonth()+" "+getDate.getFullYear();
+
+
+			var setDate=new Date();
+			setDate.setSeconds(5);
+			document.getElementById("testb").innerHTML=setDate;
+		</script>
+	</body>
+</html>
