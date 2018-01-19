@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Loops</title>
+</head>
+<body>
+	<p id="text"></p>
+	<p id="text2"></p>
+	<p id="text3"></p>
+	<p id="text4"></p>
+	<script type="text/javascript">
+		var names=["Daniel","Jane","John","Sarah","Tobi"];
+		var text="";
+		for(var i=0;i<names.length;i++){
+			text+=names[i]+"<br>";
+		}
+		document.getElementById("text").innerHTML=text;
+		//------------------------------------------------
+		var person={
+			name:"Dainel",
+			haircolor:"Brown",
+			eyecolors:"Blue"
+		};
+
+		var text2="";
+		for(var x in person){
+			text2+=person[x]+"<br>";
+		}
+		document.getElementById("text2").innerHTML=text2;
+		//-----------------------------------------------
+		var text3="";
+		var x=0;
+		while(x<10){
+			text3+=x+"<br>";
+			x++;
+		};
+		document.getElementById("text3").innerHTML=text3;
+		//----------------------------------------------
+		var i=0;
+		var text4="";
+		do{
+			text4+=i+"<br>";
+			i++;
+		}while(i<10);
+		document.getElementById("text4").innerHTML=text4;
+	</script>
+</body>
+</html>
