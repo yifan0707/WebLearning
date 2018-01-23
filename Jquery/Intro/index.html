@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery intro</title>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+	<div id="buttons">
+		<input type="button" value="button1" class="button" id="button1" data-attributeID="button1">
+		<input type="button" value="button2" class="button" id="button2" data-attributeID="button2">
+		<input type="button" value="button3" class="button" id="button3" data-attributeID="button3">
+	</div>
+
+
+	<div id="first">
+		<p>this is the first example</p>
+	</div>
+
+	<div id="second">
+		<p>this is the second example</p>
+	</div>
+
+	<div id="third">
+		<p>this is the third example</p>
+	</div>
+
+	<style>
+		p{
+			background-color:#272727;
+			border:1px solid black;
+			color:#fff;
+		}
+	</style>
+
+
+	<script>
+		/*
+		$(document).ready(
+			function(){
+				hide and show content
+				$("#first").hide(300).show(1000);
+
+				changing the css
+				$("#first p").css({
+					color:"red",
+					fontWeight:'bold',
+				});
+
+				
+				changing the html
+				$('#first p').html('html test');
+
+				slideup to hide & slideDown to show 
+				$("#second").delay(1000).slideUp(1000).slideDown(1000);
+
+				fadeIn, fadeOut, fadeToggle
+				$('#third').delay(4000).fadeOut(200).fadeIn(400).fadeToggle(1000).fadeToggle(1000);
+			}
+		);
+		*/
+		//-----------------------------------------------------------------
+
+		//listening to the event: "click" and "mouseover"
+		/*
+		$(function(){
+			$('#button1').on('click',function(){
+				$('#first').toggle(200);
+			});
+
+			$('#button2').on('mouseover',function(){
+				$('#second').toggle(200);
+			});
+			
+			$('#button3').on('click',function(){
+				$('#third').toggle(200);
+			});
+		});
+		*/
+
+		$(function(){
+			$('.button').on('click',function(){
+				let id=$(this).attr('data-attributeID');
+				let id2=$(this).attr('value');
+				console.log(id);
+				console.log(id2);
+				if(id=="button1"){
+					$('#first').toggle(300);
+				}else if(id=='button2'){
+					$('#second').toggle(300);
+				}else if(id=='button3'){
+					$('#third').toggle(300);
+				}
+			});
+		})
+	</script>
+
+</body>
+</html>
