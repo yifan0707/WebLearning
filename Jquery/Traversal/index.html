@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Traversal</title>
+	<script type="text/javascript" src="../jquery-3.3.1.min.js"></script>
+</head>
+<body>
+	<ol>
+		<li>first li</li>
+		<li class="special">Second li</li>
+		<li>
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+		</li>
+	</ol>
+	<style>
+		.special{
+			color:blue;
+		}
+		.special2{
+			font-weight: bold;
+		}
+	</style>
+
+	<script>
+		$(function(){
+			$('li').on('click',function(){
+				//fade next item
+				//$(this).next().fadeToggle(400);
+
+				//remove siblings
+				//$(this).siblings().remove();
+
+				//add class & remove class
+				/*
+				$(this).addClass('special');
+				$(this).siblings().removeClass('special');
+				$(this).closest('ol').addClass('special2');
+				*/
+
+				//using "is" to judge whether the element belongs to special class
+				if($(this).is('.special')){
+					alert("special found!");
+				}
+			});
+
+			$('ol').on('click',function(){
+				//find the first li item.
+				$(this).find('li').filter(':first').addClass('special');
+				//find is fast !!! since it will only search inside perticular area. In this case it will only search inside the ol list.
+				$(this).find('.special').addClass('special2');
+			});
+		});
+	</script>
+</body>
+</html>
