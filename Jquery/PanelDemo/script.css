@@ -1,0 +1,43 @@
+*{
+	padding:0px;
+	margin:0px;
+}
+
+.content{
+	display: none;
+}
+
+.content.active{
+	display: block;
+}
+
+.panel{
+	list-style: none;
+}
+
+.panel li{
+	display: inline-block;
+	color:white;
+	background-color:#272727;
+	border:1px solid #272727;
+	border-radius:5px 5px 0px 0px; 
+}
+
+.content{
+	background-color: #E6E6FA;
+	border:1px solid #E6E6FA;
+	width:300px;
+}
+
+#content1{
+
+}
+#content2{
+	color:red;
+}
+#content3{
+	font-weight: bold;
+}
+#content4{
+	text-decoration: underline;
+}
