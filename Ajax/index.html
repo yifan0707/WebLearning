@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ajax intro</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<h1>Ajax stands for <q>Asynchronous JavaScript And Xml</q></h1>
+	<h2>Ajax loads in data without refreshing the browser</h2>
+	<input type="button" value="change title"></input>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('input').on("click",function(){
+				$('h2').load('data.txt');
+			});
+		});
+
+	</script>
+</body>
+</html>
