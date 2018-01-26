@@ -26,6 +26,22 @@
 	$infos["Anonymous"]="No Such person!";
 	echo $infos["Anonymous"]."</br>";
 
+	echo '</br>';
+	//sorting array in php
+	/*
+	sort() sort in ascending order
+	rsort() sort in descending order
+	asort() sort associative array in ascending order, according to value
+	ksort() sort associative array in ascending order, according to key
+
+	arsort() sort associative array in descending order, according to value
+	krsort() sort associative array in descending order, according to value
+	*/
+	sort($infos);
+	foreach($infos as $value){
+		echo "$value, ";
+	}
+	echo '</br></br>';
 
 	//creating function 
 	//function functioname(){}
