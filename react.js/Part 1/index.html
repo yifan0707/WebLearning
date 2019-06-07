@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+	<title>React Js Lesson 3</title>
+</head>
+<body>
+	<div id="app"></div>
+	<script type="text/babel">
+		class App extends React.Component {
+			state = {
+				name: 'lvan',
+				age: '23'
+			}
+
+			/*
+				In order to use this.state in the customizable function
+				we need to utilize arrow functions, like so below
+			*/
+			handleClickEvent = (e) => {
+				{/*
+					if we want to change the event, we don't do
+					XXXXXX	this.state.name = "another name"
+						instead we do
+					YYYYYY 	this.setState({
+								name: "Good Name"
+							})
+				*/}
+				console.log(this.state);
+				this.setState({
+					name: "Yifan",
+				});
+				console.log(this.state);
+			}
+
+			handleMouseOverEvent(e) {
+				console.log(e);
+			}
+
+			handleCopyEvent(e) {
+				console.log('Trying to be better this time!');
+			}
+
+			handleChangeEvent = (e) => {
+				this.setState({
+					name: e.target.value
+				});
+			}
+
+			handleSubmit = (e) => {
+				e.preventDefault();
+				console.log("form submitted", this.state.name);
+			}
+
+			render() {
+				return (
+					//Only one root elements are allowed within return
+					<div className="app-content">
+						<h1>Hey, Ninjas!</h1>
+						<p>My name is: {this.state.name}</p>
+						<p>My age is: {this.state.age}</p>
+
+						{/*
+							We should not add "()" behind the function name,
+							since we only want the function reference here and
+							it will only be called when user clicks the button.
+
+							*remember to use "this"!
+						*/}
+						{/*
+							<button onClick={this.handleClickEvent}>Click Event</button>
+
+							<button onMouseOver={ this.handleMouseOverEvent }>Mouse Over</button>
+
+							<p onCopy={ this.handleCopyEvent }>I will become what I dream of</p>
+						*/}
+
+						{/*
+							by using submit instead of onClick, it can capture
+							"Enter" key pressed by user
+						*/}
+						<form onSubmit={ this.handleSubmit }>
+							<input type="text" onChange={ this.handleChangeEvent }/>
+							<button>submit</button>
+						</form>
+					</div>
+				)
+			}
+		}
+
+		ReactDOM.render(<App />, document.getElementById('app'));
+	</script>
+</body>
+</html>
